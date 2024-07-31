@@ -7,7 +7,7 @@ st.title("PublicationId to URL Teamflex")
 
 def check_input(publication_id):
     if 'cockpit' in publication_id:
-        return 'Plak niet de hele url, alleen de publicationId (bijvoorbeeld: publications-12345-A)'
+        return 'Plak niet de hele url, alleen de publicationId (bijvoorbeeld: publications-123-A)'
     elif 'JobRequests' in publication_id:
         return 'Dit is een jobrequestId, geen publicationId :)'
     elif 'publications' not in publication_id:
