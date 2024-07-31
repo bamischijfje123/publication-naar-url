@@ -3,7 +3,7 @@ import re
 import requests
 import json
 
-st.title("PublicationId naar URL")
+st.title("PublicationId naar URL PDZ")
 
 #visit url and extract json with data
 def get_json(url):
