@@ -57,11 +57,13 @@ def get_url(publication_id):
 
     job_details_PDZ = extract_job_details(json_data_PDZ, 'PDZ')
 
-    for job in job_details_PDZ:
+    for job in all_job_details:
         if job['publicationId'] == publication_id:
-            publication_url = job['publicationUrl']
+            text_to_print = job['publicationUrl']
             break
-    return publication_url
+        else:
+            text_to_print = 'Geen online publicatie gevonden'
+    return text_to_print
 
 # Create a form
 with st.form(key='publication_form'):
