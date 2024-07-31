@@ -5,6 +5,14 @@ import json
 
 st.title("PublicationId to URL Teamflex")
 
+def check_input(publication_id):
+    if 'cockpit' in publication_id:
+        return 'Plak niet de hele url, alleen de publicationId (bijvoorbeeld: publications-12345-A)'
+    elif 'JobRequests' in publication_id:
+        return 'Dit is een jobrequestId, geen publicationId :)'
+    elif 'publications' not in publication_id:
+        return 'Dit is geen publicationId'
+
 #visit url and extract json with data
 def get_json(url):
     response = requests.get(url).text
@@ -74,7 +82,11 @@ with st.form(key='publication_form'):
 
 # Store the input when the form is submitted
 if submit_button:
-    url = get_url(publication_id)
-    st.write(url)
+    response = check_input(publication_id)
+    if response:
+        st.write(response)
+    else:
+        url = get_url(publication_id)
+        st.write(url)
 
 
