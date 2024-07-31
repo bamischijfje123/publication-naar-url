@@ -57,7 +57,7 @@ def get_url(publication_id):
 
     job_details_PDZ = extract_job_details(json_data_PDZ, 'PDZ')
 
-    for job in all_job_details:
+    for job in job_details_PDZ:
         if job['publicationId'] == publication_id:
             text_to_print = job['publicationUrl']
             break
