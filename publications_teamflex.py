@@ -3,7 +3,7 @@ import re
 import requests
 import json
 
-st.title("PublicationId to URL Teamflex")
+st.title("PublicationId naar URL Teamflex")
 
 def check_input(publication_id):
     if 'cockpit' in publication_id:
